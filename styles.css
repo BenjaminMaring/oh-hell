@@ -25,6 +25,7 @@ h3 {
     font-family: 'Lato', sans-serif;
     padding: 0px;
     margin: 15px;
+
 }
 
 .title {
@@ -33,6 +34,7 @@ h3 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    margin-top: 0px;
 }
 
 .next-round {
@@ -205,7 +207,7 @@ ul li span:hover {
 .player {
     width: 300px;
     height: 300px;
-    margin: 10px 40px 40px;
+    margin: 10px 20px 20px;
     background-color: white;
     display: flex;
     flex-direction: column;
