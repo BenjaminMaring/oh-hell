@@ -16,20 +16,21 @@ h2 {
     font-size: 80px;
     font-family: agbalumo;
     color: #BF0603;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 h3 {
     color: white;
     font-size: 60px;
     font-family: 'Lato', sans-serif;
+    padding: 0px;
+    margin: 15px;
 }
 
 .title {
     width: 90vw;
-    height: 100px;
-    margin-bottom: 10px 0px 50px 0px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -45,6 +46,8 @@ h3 {
     border-radius: 30px;
     transition: background-color 200ms ease;
     box-shadow: 0px 0px 10px 2px black;
+    margin-top: 15px;
+    
 }
 
 .next-round:hover {
@@ -255,4 +258,50 @@ input[type=number]::-webkit-inner-spin-button {
     opacity: 1
 }
 
+#back-to-ten {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 150px);
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    transition: width 200ms ease, height 200ms ease;
+}
 
+#back-to-ten > p {
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 300px;
+}
+
+#back-to-ten > div {
+    display: flex;
+}
+
+#back-to-ten > div > button:nth-child(1) {
+    background-color: red;
+}
+
+#back-to-ten > div > button:nth-child(2) {
+    background-color: green;
+}
+
+#back-to-ten > div > button {
+    margin: 10px;
+    width: 70px;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0px 0px 5px 1px black;
+}

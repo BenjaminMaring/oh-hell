@@ -1,11 +1,11 @@
 const inputBox = document.getElementById('input-box');
 const listContainer = document.getElementById('list-container');
 let start = document.getElementById('start-screen');
-let game = document.getElementById('game')
+let game = document.getElementById('game');
+let backToTen = document.getElementById('back-to-ten');
 
 let players = [];
-let count = 0;
-
+let round = 0;
 
 //This function dynamically adds the player to the list, and stores the player name into the array
 function addPlayer() {
@@ -89,10 +89,10 @@ function startGame() {
 //
 //Im sure this isnt a propper way of doing this, as when you scale it can become pretty demanding, but for the game and the size of players that you will generally have its fine and not very worrysome.
 function generateGame() {
-    count++;
+    round++;
     //creates the title menu that will display the round count, card count, and next round button.
      const title = document.createElement("div");
-     title.innerHTML='<div class="title"><h2>Oh Hell</h2><h3 id="roundCount">Round ' +  count + '</h3><h3 id="cardCount">Card Count: ' + (10 - count +1) + '</h3><button class="next-round" onclick="nextRound()">Next Round</button></div>'
+     title.innerHTML='<div class="title"><h2>Oh Hell</h2><h3 id="roundCount">Round ' +  round + '</h3><h3 id="cardCount">Card Count: ' + (1 + Math.abs((10 - round ))) + '</h3><button class="next-round" onclick="nextRound()">Next Round</button></div>'
      game.appendChild(title)
 
      //creates the player cards
@@ -108,20 +108,19 @@ function generateGame() {
 //This was kinda tricky to implement, as it is dynamic and largely depends on the 'players' name property.
 function nextRound() {
 
-    //checks to see if the game is over. will need to rework how this functions to give the players the options to go to round 20
-    if (count == 10) {
-        alert("Game over");
+    if (round == 19 ) {
+        alert("Game Over");
         return;
     }
-    count++;
+    round++;
 
     //changes the round count 
     let roundCount = document.getElementById("roundCount");
-    roundCount.innerHTML = "Round " + count;
+    roundCount.innerHTML = "Round " + (round);
 
     //changes the card count
     let cardCount = document.getElementById("cardCount");
-    cardCount.innerHTML = "Card Count: " + (10 - count + 1);
+    cardCount.innerHTML = "Card Count: " + (1 + Math.abs((10 - round)));
 
     //This changes the score for each player
     for (let i=0; i<players.length; i++) {
