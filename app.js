@@ -68,8 +68,6 @@ listContainer.addEventListener("click", function(e) {
     }
 })
 
-
-
 function startGame() {
     start.style = "display: none";
     game.style = "display: show"
